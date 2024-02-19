@@ -39,12 +39,13 @@ function makeMeta(meta_data) {
       panel.append("p").text(`${key}: ${meta_data[key]}`);
     }
   }
-  
+
+  // make gauge chart
   function makeGauge(meta_data) {
     let trace1 = {
       domain: { x: [0, 1], y: [0, 1] },
       value: meta_data["wfreq"],
-      title: { text: "Belly Button Washing Frequency" },
+      title: { text: "Belly Button Washing Frequency (per week)" },
       type: "indicator",
       mode: "gauge+number+delta",
       delta: { reference: 5 },
@@ -115,7 +116,7 @@ function makeMeta(meta_data) {
   
     let layout = {
       title: "OTUs Observed",
-      xaxis: { title: "OTU IDs" },
+      xaxis: { title: "OTU ID" },
       yaxis: { title: "Number of Observed" }
     };
   
